@@ -1,8 +1,5 @@
-__author__ = 'atty'
-
 from collections import namedtuple
-
-from singletons import Singleton
+from .singletons import Singleton
 
 
 class AbstractSignalsManagerWithSingletonPattern(Singleton):
@@ -77,7 +74,7 @@ class AbstractSignalsManagerWithSingletonPattern(Singleton):
     def _action_for_all_(self, dict_params):
         """
 
-        :param action:
+        :param dict_params:
         :return:
         """
         action = dict_params['action_for_all']
@@ -127,7 +124,7 @@ class AbstractSignalsManagerWithSingletonPattern(Singleton):
                     if key in self.dict_group[s_group]:
                         action_with_key(key)
             except:
-                print s_group
+                print(s_group)
                 return_state = -1
         #
         return return_state

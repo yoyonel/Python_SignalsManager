@@ -1,9 +1,9 @@
 from PyQt4.QtCore import SIGNAL
 #
-from signalsmanager_actions import ISignalsManagerActionConnect
-from signalsmanager_actions import ISignalsManagerActionDisconnect
-from signalsmanager_actions import ISignalsManagerActionStart
-from signalsmanager_actions import ISignalsManagerActionStop
+from .signalsmanager_actions import ISignalsManagerActionConnect
+from .signalsmanager_actions import ISignalsManagerActionDisconnect
+from .signalsmanager_actions import ISignalsManagerActionStart
+from .signalsmanager_actions import ISignalsManagerActionStop
 
 
 class ISignalsManager(ISignalsManagerActionConnect,
@@ -29,9 +29,9 @@ class ISignalsManager(ISignalsManagerActionConnect,
         :param qobject:
         :param signal_signature:
         :param slot:
+        :param s_group:
         :param b_connect_signal:
         :return:
-
         """
         return_state = 1
         #
@@ -62,8 +62,9 @@ class ISignalsManager(ISignalsManagerActionConnect,
     def add_clicked(self, qobject, slot, s_group="all"):
         """
         Add a specific signal 'clicked' (from Qt GUI) into our manager
-
+        
         :param qobject:
+        :param slot:
         :param s_group:
         :return:
         """

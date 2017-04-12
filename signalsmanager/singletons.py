@@ -1,4 +1,4 @@
-__author__ = 'latty'
+import thread
 
 
 class SingletonDecorator:
@@ -78,9 +78,6 @@ class Singleton(object):
 
     def display(self):
         print self.name, id(self), type(self)
-
-
-import thread
 
 
 class SingletonClassWithInheritanceSupport(object):
